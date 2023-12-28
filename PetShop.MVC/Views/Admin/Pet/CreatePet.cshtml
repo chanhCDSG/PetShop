@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Pet
+
+
+
+
+<div class="card">
+    <div class="row">
+        <h1 class="col-12 fw-bold card-header">Add Pet</h1>
+    </div>
+    <div class="card-body">
+        <form asp-page-handler="insert"  method="post">
+            <div asp-validation-summary="All" class="text-danger fw-bold"></div>
+            Name:
+            <input asp-for="Name" />
+            Description:
+            <input asp-for="Description" />
+            Image:
+            <input asp-for="Image" />
+            Price:
+            <input asp-for="Price" />
+            Created Date:
+            <input asp-for="CreatedDate" type="date" />
+            Updated Date:
+            <input asp-for="UpdatedDate" type="date" />
+            <input type="submit" />
+        </form>
+    </div>
+</div>

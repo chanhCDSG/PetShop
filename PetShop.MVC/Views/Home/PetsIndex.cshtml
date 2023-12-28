@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+@model IEnumerable<Pet>
+<div class="card">
+    <div class="row">
+        <h1 class="col-6 fw-bold card-header">Pets Table</h1>
+        <div class="col-6">
+            <a class="btn btn-success" asp-page="/Admin/Pet/CreatePet">Add new</a>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <tdead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Created Date</th>
+                    <th>Updated Date</th>
+                    <th>Action</th>
+                </tr>
+            </tdead>
+            <tbody>
+                @foreach (var p in Model ?? Enumerable.Empty<Pet>())
+                {                        
+                    <partial name="PetSummary" model="p"></partial>
+                }    
+            </tbody>
+        </table>
+    </div>
+</div>
